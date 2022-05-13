@@ -1,22 +1,18 @@
 package com.co.indra.coinmarketcap.notifications.model.entities;
 
 
-import javax.persistence.*;
 
-@Entity
-@Table(name = "tbl_user_notifications_data")
+import java.io.Serializable;
 
-public class Notifications {
+public class Notifications implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+
     private Long userId;
 
-    @Column(name = "mail")
+
     private String mailUser;
 
-    @Column(name = "phone_number")
+
     private String phoneNumber;
 
 
