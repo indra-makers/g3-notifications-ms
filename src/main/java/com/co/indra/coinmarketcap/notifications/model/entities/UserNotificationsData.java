@@ -2,24 +2,18 @@ package com.co.indra.coinmarketcap.notifications.model.entities;
 
 
 import java.io.Serializable;
-import java.util.Date;
+
 
 
 public class UserNotificationsData implements Serializable {
 
+    private Long id_user_notifications;
 
+    private String mail;
 
+    private String phone_number;
 
-private Long userId;
-
-
-private String typeNotification;
-
-
-private String messageNotification;
-
-
-private Date sentAt;
+    private Long id_notifications;
 
 
 
@@ -28,44 +22,43 @@ private Date sentAt;
     }
 
     //Constructor with attributes
-    public UserNotificationsData(Long userId, String typeNotification, String messageNotification, Date sentAt) {
-        this.userId = userId;
-        this.typeNotification = typeNotification;
-        this.messageNotification = messageNotification;
-        this.sentAt = sentAt;
+    public UserNotificationsData(Long id_user_notifications, String mail, String phone_number, Long id_notifications) {
+        this.id_user_notifications = id_user_notifications;
+        this.mail = mail;
+        this.phone_number = phone_number;
+        this.id_notifications = id_notifications;
     }
 
-
-    //Getters and setters
-    public Long getUserId() {
-        return userId;
+    //Getters and Setters
+    public Long getId_user_notifications() {
+        return id_user_notifications;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setId_user_notifications(Long id_user_notifications) {
+        this.id_user_notifications = id_user_notifications;
     }
 
-    public String getTypeNotification() {
-        return typeNotification;
+    public String getMail() {
+        return mail;
     }
 
-    public void setTypeNotification(String typeNotification) {
-        this.typeNotification = typeNotification;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
-    public String getMessageNotification() {
-        return messageNotification;
+    public String getPhone_number() {
+        return phone_number;
     }
 
-    public void setMessageNotification(String messageNotification) {
-        this.messageNotification = messageNotification;
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 
-    public Date getSentAt() {
-        return sentAt;
+    public Long getId_notifications() {
+        return id_notifications;
     }
 
-    public void setSentAt(Date sentAt) {
-        this.sentAt = sentAt;
+    public void setId_notifications(Long id_notifications) {
+        this.id_notifications = id_notifications;
     }
 }
