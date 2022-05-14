@@ -14,12 +14,7 @@ public class NotificationsService {
      @Autowired
     private NotificationsRepository notificationsRepository;
 
-/*
-     public void registerNotification(String type, String message,Long id_user){
 
-         notificationsRepository.createNotification(new Notifications(type,message,id_user));
-
-     }*/
 
     public void registerNotification(Notifications notifications){
 
@@ -27,13 +22,22 @@ public class NotificationsService {
 
     }
 
+    public void removeNotification(Long id_notifications){
+        notificationsRepository.deleteNotification(id_notifications);
+    }
+
 
 
      public List<Notifications> getNotificationsByType(String type){
 
-         return notificationsRepository.findByNotifications(type);
+         return notificationsRepository.findByType(type);
      }
 
+
+     public List<Notifications> getNotificationsByIdIdNotifications(Long id_notifications){
+
+        return notificationsRepository.findByIdNotifications(id_notifications);
+     }
 
 
 

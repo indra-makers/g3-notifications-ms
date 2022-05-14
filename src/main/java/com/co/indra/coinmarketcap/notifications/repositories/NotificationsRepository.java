@@ -43,7 +43,7 @@ public class NotificationsRepository {
 
 
 
-    public List<Notifications> findByNotifications(String type){
+    public List<Notifications> findByType(String type){
 
         return template.query(
                 "SELECT id_notifications,type,message,sent_at,id_user FROM tbl_notifications WHERE type = ?",
@@ -53,6 +53,22 @@ public class NotificationsRepository {
 
     }
 
+
+    public List<Notifications> findByIdNotifications(Long id_notifications){
+
+        return template.query("SELECT id_notifications,type,message,sent_at,id_user FROM tbl_notifications WHERE id_notifications = ?",
+                new NotificationsRowMapper(),
+                id_notifications);
+
+    }
+
+
+    public void deleteNotification(Long id_notifications){
+
+        template.update("DELETE FROM tbl_notifications WHERE id_notifications = ?",
+                id_notifications);
+
+    }
 
 
 
