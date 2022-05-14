@@ -3,6 +3,7 @@ package com.co.indra.coinmarketcap.notifications.controllers;
 
 import com.co.indra.coinmarketcap.notifications.model.entities.Notifications;
 import com.co.indra.coinmarketcap.notifications.services.NotificationsService;
+import com.co.indra.coinmarketcap.notifications.services.UserNotificationsDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,11 @@ public class NotificationsController {
 
     @Autowired
     private NotificationsService notificationsService;
+
+    @Autowired
+    private UserNotificationsDataService userNotificationsDataService;
+
+    /********Comienzo de controladores para entidad Notifications*/
 
     //Crear nueva notificacion
     @PostMapping("/sendnotification")
@@ -35,9 +41,15 @@ public class NotificationsController {
 
     }
 
+    //Eliminar notificacion por medio del id
     @DeleteMapping
     public void remove(@RequestParam(name = "deletenotification") Long id_notifications){
         notificationsService.removeNotification(id_notifications);
     }
+
+
+    /********Comienzo de controladores para entidad UserNotificationData**/
+
+
 
 }

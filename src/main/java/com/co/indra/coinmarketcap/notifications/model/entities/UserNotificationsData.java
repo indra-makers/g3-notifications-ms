@@ -21,9 +21,8 @@ public class UserNotificationsData implements Serializable {
     public UserNotificationsData() {
     }
 
-    //Constructor with attributes
-    public UserNotificationsData(Long id_user_notifications, String mail, String phone_number, Long id_notifications) {
-        this.id_user_notifications = id_user_notifications;
+    //constructor with attributes
+    public UserNotificationsData(String mail, String phone_number, Long id_notifications) {
         this.mail = mail;
         this.phone_number = phone_number;
         this.id_notifications = id_notifications;
