@@ -2,6 +2,8 @@ package com.co.indra.coinmarketcap.notifications.controllers;
 
 
 import com.co.indra.coinmarketcap.notifications.model.entities.Notifications;
+import com.co.indra.coinmarketcap.notifications.model.entities.UserNotificationsData;
+import com.co.indra.coinmarketcap.notifications.model.requests.NotificationsDataRequest;
 import com.co.indra.coinmarketcap.notifications.services.NotificationsService;
 import com.co.indra.coinmarketcap.notifications.services.UserNotificationsDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +50,29 @@ public class NotificationsController {
     }
 
 
-    /********Comienzo de controladores para entidad UserNotificationData**/
+    /****************Comienzo de controladores para entidad UserNotificationData**/
+
+    //Agregar a una notificacion sus datos de envio
+    @PostMapping("/{id_notifications}/usernotificationsdata")
+    public void createDataToNotification(@RequestBody NotificationsDataRequest request,
+                                         @PathVariable("id_notifications") Long id_notifications){
+
+        userNotificationsDataService.registerUserNotificationData(request.getMail(), request.getPhone_number(), id_notifications);
+
+    }
+
+
+    //Obtener los datos de envio segun el id de la notificacion suministrada por la URL
+    @GetMapping ("/{id_notifications}/usernotificationsdata")
+    public List<UserNotificationsData> getNotificationDataByIdNotification(
+                                         @PathVariable("id_notifications") Long id_notifications){
+
+        return userNotificationsDataService.getNotificationDataByIdNotification(id_notifications);
+
+    }
+
+
+
 
 
 

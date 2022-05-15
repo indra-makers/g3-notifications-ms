@@ -6,18 +6,29 @@ import com.co.indra.coinmarketcap.notifications.repositories.UserNotificationsDa
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserNotificationsDataService {
 
     @Autowired
     private UserNotificationsDataRepository userNotificationsDataRepository;
 
-    public void registerUserNotificationData(UserNotificationsData userNotificationsData){
+    public void registerUserNotificationData(String mail, String phone_number, Long id_notifications){
 
-        userNotificationsDataRepository.createUserNotificationData(userNotificationsData);
+        /*if(mail ==null || phone_number ==null){
+            throw new RuntimeException("Invalid dates");
+        }*/
 
+        userNotificationsDataRepository.createUserNotificationData(new UserNotificationsData(mail,phone_number,id_notifications));
 
     }
+
+    public List<UserNotificationsData> getNotificationDataByIdNotification(Long id_notifications){
+
+        return userNotificationsDataRepository.findByIdNotifications(id_notifications);
+    }
+
 
 
 
