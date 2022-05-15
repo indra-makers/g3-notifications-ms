@@ -14,7 +14,6 @@ public class NotificationsDataRequest {
 
 
 
-
     public String getMail() {
         return mail;
     }
@@ -30,4 +29,5 @@ public class NotificationsDataRequest {
     public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
     }
+
 }

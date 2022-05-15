@@ -39,7 +39,7 @@ public class UserNotificationsDataRepository {
 
         template.update("INSERT INTO tbl_user_notifications_data (mail,phone_number,id_notifications) values(?,?,?)",
 
-                userNotificationsData.getMail(), userNotificationsData.getPhone_number(), userNotificationsData.getId_user_notifications());
+                userNotificationsData.getMail(), userNotificationsData.getPhone_number(), userNotificationsData.getId_notifications());
 
     }
 
@@ -55,6 +55,17 @@ public class UserNotificationsDataRepository {
 
 
     }
+
+    //Se eliminan los datos de envio segun el id Notifications
+    public void deleteUserDataByIdNotification(Long id_notifications){
+
+        template.update("DELETE FROM tbl_user_notifications_data WHERE id_notifications = ?",
+                id_notifications);
+
+    }
+
+
+
 
 
 }

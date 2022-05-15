@@ -24,10 +24,20 @@ public class UserNotificationsDataService {
 
     }
 
+
+    public void removeUserNotificationData(Long id_notifications){
+        userNotificationsDataRepository.deleteUserDataByIdNotification(id_notifications);
+    }
+
+
     public List<UserNotificationsData> getNotificationDataByIdNotification(Long id_notifications){
 
         return userNotificationsDataRepository.findByIdNotifications(id_notifications);
     }
+
+
+
+
 
 
 

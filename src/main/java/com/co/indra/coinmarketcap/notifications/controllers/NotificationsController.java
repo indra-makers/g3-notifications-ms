@@ -62,6 +62,7 @@ public class NotificationsController {
     }
 
 
+
     //Obtener los datos de envio segun el id de la notificacion suministrada por la URL
     @GetMapping ("/{id_notifications}/usernotificationsdata")
     public List<UserNotificationsData> getNotificationDataByIdNotification(
@@ -71,9 +72,11 @@ public class NotificationsController {
 
     }
 
-
-
-
+    //Eliminar los datos de envio por medio del id Notifications FK
+    @DeleteMapping ("/{id_notifications}/usernotificationsdata")
+    public void removeUserDataByIdNotifications(@PathVariable("id_notifications") Long id_notifications){
+        userNotificationsDataService.removeUserNotificationData(id_notifications);
+    }
 
 
 }
