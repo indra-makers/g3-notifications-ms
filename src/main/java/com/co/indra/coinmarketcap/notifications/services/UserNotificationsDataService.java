@@ -16,9 +16,9 @@ public class UserNotificationsDataService {
 
     public void registerUserNotificationData(String mail, String phone_number, Long id_notifications){
 
-        /*if(mail ==null || phone_number ==null){
-            throw new RuntimeException("Invalid dates");
-        }*/
+        if(mail == null || phone_number == null){
+            throw new RuntimeException("Dates Empty");
+        }
 
         userNotificationsDataRepository.createUserNotificationData(new UserNotificationsData(mail,phone_number,id_notifications));
 
