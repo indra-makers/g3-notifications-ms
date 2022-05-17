@@ -23,9 +23,9 @@ public class NotificationsController {
 	/******** Comienzo de controladores para entidad Notifications */
 
 	// Crear nueva notificacion
-	@PostMapping("/sendnotification")
+	@PostMapping
 	public void create(@RequestBody Notifications notifications) {
-
+		
 	}
 
 	// Obtener notificaciones por tipo de notificacion
@@ -35,16 +35,17 @@ public class NotificationsController {
 	}
 
 	// Obtener notificaciones por el id de la notificacion
-	@GetMapping("/searchnotificationID")
-	public List<Notifications> getNotificationsByIdNotifications(@RequestParam(name = "id") Long id_notifications) {
+	@GetMapping("/{id_notifications}/searchnotificationID")
+	public List<Notifications> getNotificationsByIdNotifications(@PathVariable("id_notifications") Long id_notifications) {
 		return null;
 	}
 
-	// Eliminar notificacion por medio del id
-	@DeleteMapping
-	public void remove(@RequestParam(name = "deletenotification") Long id_notifications) {
+	// Eliminar notificacion por medio del id de notificacion
+	@DeleteMapping("/{id_notifications}/notifications")
+	public void removenotification(@PathVariable("id_notifications") Long id_notifications) {
 
 	}
+	
 
 	/****************
 	 * Comienzo de controladores para entidad UserNotificationData
