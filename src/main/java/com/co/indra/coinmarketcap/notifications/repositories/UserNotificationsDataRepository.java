@@ -15,10 +15,10 @@ class UserNotificationsDataRowMapper implements RowMapper<UserNotificationsData>
 	@Override
 	public UserNotificationsData mapRow(ResultSet rs, int rowNum) throws SQLException {
 		UserNotificationsData userNotificationsData = new UserNotificationsData();
-		userNotificationsData.setId_user_notifications(rs.getLong("id_user_notifications"));
+		userNotificationsData.setIdUserNotifications(rs.getLong("idUserNotifications"));
 		userNotificationsData.setMail(rs.getString("mail"));
-		userNotificationsData.setPhone_number(rs.getString("phone_number"));
-		userNotificationsData.setId_notifications(rs.getLong("id_notifications"));
+		userNotificationsData.setPhoneNumber(rs.getString("phoneNumber"));
+		userNotificationsData.setIdNotifications(rs.getLong("idNotifications"));
 		return userNotificationsData;
 	}
 }

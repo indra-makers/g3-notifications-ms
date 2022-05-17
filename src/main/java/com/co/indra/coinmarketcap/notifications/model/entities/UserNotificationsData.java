@@ -4,32 +4,34 @@ import java.io.Serializable;
 
 public class UserNotificationsData implements Serializable {
 
-	private Long id_user_notifications;
+	private Long idUserNotifications;
 
 	private String mail;
 
-	private String phone_number;
+	private String phoneNumber;
 
-	private Long id_notifications;
+	private Long idNotifications;
 
 	// Constructor empty
 	public UserNotificationsData() {
 	}
 
 	// constructor with attributes
-	public UserNotificationsData(String mail, String phone_number, Long id_notifications) {
+
+	public UserNotificationsData(String mail, String phoneNumber, Long idNotifications) {
+		super();
 		this.mail = mail;
-		this.phone_number = phone_number;
-		this.id_notifications = id_notifications;
+		this.phoneNumber = phoneNumber;
+		this.idNotifications = idNotifications;
 	}
 
 	// Getters and Setters
-	public Long getId_user_notifications() {
-		return id_user_notifications;
+	public Long getIdUserNotifications() {
+		return idUserNotifications;
 	}
 
-	public void setId_user_notifications(Long id_user_notifications) {
-		this.id_user_notifications = id_user_notifications;
+	public void setIdUserNotifications(Long idUserNotifications) {
+		this.idUserNotifications = idUserNotifications;
 	}
 
 	public String getMail() {
@@ -40,20 +42,20 @@ public class UserNotificationsData implements Serializable {
 		this.mail = mail;
 	}
 
-	public String getPhone_number() {
-		return phone_number;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setPhone_number(String phone_number) {
-		this.phone_number = phone_number;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
-	public Long getId_notifications() {
-		return id_notifications;
+	public Long getIdNotifications() {
+		return idNotifications;
 	}
 
-	public void setId_notifications(Long id_notifications) {
-		this.id_notifications = id_notifications;
+	public void setIdNotifications(Long idNotifications) {
+		this.idNotifications = idNotifications;
 	}
 
 }

@@ -15,11 +15,11 @@ class NotificationsRowMapper implements RowMapper<Notifications> {
 	@Override
 	public Notifications mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Notifications notifications = new Notifications();
-		notifications.setId_notifications(rs.getLong("id_notifications"));
+		notifications.setIdNotifications(rs.getLong("idNotifications"));
 		notifications.setType(rs.getString("type"));
 		notifications.setMessage(rs.getString("message"));
-		notifications.setSent_at(rs.getDate("sent_at"));
-		notifications.setId_user(rs.getLong("id_user"));
+		notifications.setSentAt(rs.getDate("sentAt"));
+		notifications.setIdUser(rs.getLong("idUser"));
 		return notifications;
 	}
 }

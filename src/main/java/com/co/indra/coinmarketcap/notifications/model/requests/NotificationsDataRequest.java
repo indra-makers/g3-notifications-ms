@@ -4,11 +4,12 @@ public class NotificationsDataRequest {
 
 	private String mail;
 
-	private String phone_number;
+	private String phoneNumber;
 
 	public NotificationsDataRequest() {
 	}
 
+	
 	public String getMail() {
 		return mail;
 	}
@@ -17,12 +18,14 @@ public class NotificationsDataRequest {
 		this.mail = mail;
 	}
 
-	public String getPhone_number() {
-		return phone_number;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setPhone_number(String phone_number) {
-		this.phone_number = phone_number;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
+
+
 
 }

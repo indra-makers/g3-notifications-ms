@@ -35,14 +35,14 @@ public class NotificationsController {
 	}
 
 	// Obtener notificaciones por el id de la notificacion
-	@GetMapping("/{id_notifications}/searchnotificationID")
-	public List<Notifications> getNotificationsByIdNotifications(@PathVariable("id_notifications") Long id_notifications) {
+	@GetMapping("/{idNotifications}/searchnotificationID")
+	public List<Notifications> getNotificationsByIdNotifications(@PathVariable("idNotifications") Long idNotifications) {
 		return null;
 	}
 
 	// Eliminar notificacion por medio del id de notificacion
-	@DeleteMapping("/{id_notifications}/notifications")
-	public void removenotification(@PathVariable("id_notifications") Long id_notifications) {
+	@DeleteMapping("/{idNotifications}/notifications")
+	public void removenotification(@PathVariable("idNotifications") Long idNotifications) {
 
 	}
 	
@@ -52,23 +52,23 @@ public class NotificationsController {
 	 **/
 
 	// Agregar a una notificacion sus datos de envio
-	@PostMapping("/{id_notifications}/usernotificationsdata")
+	@PostMapping("/{idNotifications}/usernotificationsdata")
 	public void createDataToNotification(@RequestBody NotificationsDataRequest request,
-			@PathVariable("id_notifications") Long id_notifications) {
+			@PathVariable("idNotifications") Long idNotifications) {
 
 	}
 
 	// Obtener los datos de envio segun el id de la notificacion suministrada por la
 	// URL
-	@GetMapping("/{id_notifications}/usernotificationsdata")
+	@GetMapping("/{idNotifications}/usernotificationsdata")
 	public List<UserNotificationsData> getNotificationDataByIdNotification(
-			@PathVariable("id_notifications") Long id_notifications) {
+			@PathVariable("idNotifications") Long idNotifications) {
 		return null;
 	}
 
 	// Eliminar los datos de envio por medio del id Notifications FK
-	@DeleteMapping("/{id_notifications}/usernotificationsdata")
-	public void removeUserDataByIdNotifications(@PathVariable("id_notifications") Long id_notifications) {
+	@DeleteMapping("/{idNotifications}/usernotificationsdata")
+	public void removeUserDataByIdNotifications(@PathVariable("idNotifications") Long id_notifications) {
 
 	}
 

@@ -5,36 +5,38 @@ import java.util.Date;
 
 public class Notifications implements Serializable {
 
-	private Long id_notifications;
+	private Long idNotifications;
 
 	private String type;
 
 	private String message;
 
-	private Date sent_at;
+	private Date sentAt;
 
-	private Long id_user;
+	private Long idUser;
 
-	private String sent_to;
+	private String sentTo;
 
 	public Notifications() {
 	}
 
 	// Constructor with attributes
-	public Notifications(String type, String message, Long id_user, String sent_to) {
+
+	public Notifications(String type, String message, Long idUser, String sentTo) {
+		super();
 		this.type = type;
 		this.message = message;
-		this.id_user = id_user;
-		this.sent_to = sent_to;
+		this.idUser = idUser;
+		this.sentTo = sentTo;
 	}
 
 	// Getters and Setters
-	public Long getId_notifications() {
-		return id_notifications;
+	public Long getIdNotifications() {
+		return idNotifications;
 	}
 
-	public void setId_notifications(Long id_notifications) {
-		this.id_notifications = id_notifications;
+	public void setIdNotifications(Long idNotifications) {
+		this.idNotifications = idNotifications;
 	}
 
 	public String getType() {
@@ -53,27 +55,28 @@ public class Notifications implements Serializable {
 		this.message = message;
 	}
 
-	public Date getSent_at() {
-		return sent_at;
+	public Date getSentAt() {
+		return sentAt;
 	}
 
-	public void setSent_at(Date sent_at) {
-		this.sent_at = sent_at;
+	public void setSentAt(Date sentAt) {
+		this.sentAt = sentAt;
 	}
 
-	public Long getId_user() {
-		return id_user;
+	public Long getIdUser() {
+		return idUser;
 	}
 
-	public void setId_user(Long id_user) {
-		this.id_user = id_user;
+	public void setIdUser(Long idUser) {
+		this.idUser = idUser;
 	}
 
-	public String getSent_to() {
-		return sent_to;
+	public String getSentTo() {
+		return sentTo;
 	}
 
-	public void setSent_to(String sent_to) {
-		this.sent_to = sent_to;
+	public void setSentTo(String sentTo) {
+		this.sentTo = sentTo;
 	}
+
 }
