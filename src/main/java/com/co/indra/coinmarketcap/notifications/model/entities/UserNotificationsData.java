@@ -4,34 +4,27 @@ import java.io.Serializable;
 
 public class UserNotificationsData implements Serializable {
 
-	private Long idUserNotifications;
+	private Long idUser;
 
 	private String mail;
 
 	private String phoneNumber;
 
-	private Long idNotifications;
-
-	// Constructor empty
 	public UserNotificationsData() {
 	}
 
-	// constructor with attributes
-
-	public UserNotificationsData(String mail, String phoneNumber, Long idNotifications) {
-		super();
+	public UserNotificationsData(Long idUser, String mail, String phoneNumber) {
+		this.idUser = idUser;
 		this.mail = mail;
 		this.phoneNumber = phoneNumber;
-		this.idNotifications = idNotifications;
 	}
 
-	// Getters and Setters
-	public Long getIdUserNotifications() {
-		return idUserNotifications;
+	public Long getIdUser() {
+		return idUser;
 	}
 
-	public void setIdUserNotifications(Long idUserNotifications) {
-		this.idUserNotifications = idUserNotifications;
+	public void setIdUser(Long idUser) {
+		this.idUser = idUser;
 	}
 
 	public String getMail() {
@@ -49,13 +42,4 @@ public class UserNotificationsData implements Serializable {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-
-	public Long getIdNotifications() {
-		return idNotifications;
-	}
-
-	public void setIdNotifications(Long idNotifications) {
-		this.idNotifications = idNotifications;
-	}
-
 }
