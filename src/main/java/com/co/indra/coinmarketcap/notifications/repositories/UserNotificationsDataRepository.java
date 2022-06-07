@@ -34,11 +34,10 @@ public class UserNotificationsDataRepository {
 				userNotificationsData.getIdUser(), userNotificationsData.getMail(), userNotificationsData.getPhoneNumber());
 	}
 
-	public List<UserNotificationsData> findPhoneByIdUser(Long idUser) {
+	public List<UserNotificationsData> findEmailByIdUser(Long idUser) {
 		return template.query(
 				"SELECT id_user, mail, phone_number FROM tbl_user_notifications_data WHERE id_user=?",
 				new UserNotificationsDataRowMapper(),
 				idUser);
 	}
-
 }

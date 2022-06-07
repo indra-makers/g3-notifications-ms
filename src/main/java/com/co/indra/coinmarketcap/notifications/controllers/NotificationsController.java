@@ -28,9 +28,9 @@ public class NotificationsController {
 		userNotificationsDataService.createNotificationUserData(userNotificationsData);
 	}
 
-	@PostMapping(Routes.SEND_SMS_PATH)
-	public void CreateSMS(@RequestBody Notifications notifications){
-		notificationsService.createSMSNotification(notifications);
+	@PostMapping(Routes.SEND_EMAIL_PATH)
+	public void CreateEmail(@RequestBody Notifications notifications){
+		notificationsService.createEmailNotification(notifications);
 	}
 
 	// Obtener notificaciones por tipo de notificacion
