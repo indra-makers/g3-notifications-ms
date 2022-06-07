@@ -11,12 +11,14 @@ public class SendSMS {
     private String ACCOUNT_SID;
     @Value("${sms.auth.token}")
     private String AUTH_TOKEN;
+    @Value("${sms.phone.from}")
+    private String FROM;
 
     public void sendsms(String p, String m, Long u) {
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         Message message = Message.creator(
                         new com.twilio.type.PhoneNumber(p),
-                        new com.twilio.type.PhoneNumber("+18123708571"),
+                        new com.twilio.type.PhoneNumber(FROM),
                         "Hola "+u+"\n"+m)
                 .create();
 
