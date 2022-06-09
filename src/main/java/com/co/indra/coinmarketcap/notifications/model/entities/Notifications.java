@@ -15,7 +15,7 @@ public class Notifications implements Serializable {
 
 	private Long idUser;
 
-	private String sentTo;
+
 
 	public Notifications() {
 	}
@@ -27,7 +27,7 @@ public class Notifications implements Serializable {
 		this.type = type;
 		this.message = message;
 		this.idUser = idUser;
-		this.sentTo = sentTo;
+
 	}
 
 	// Getters and Setters
@@ -71,12 +71,6 @@ public class Notifications implements Serializable {
 		this.idUser = idUser;
 	}
 
-	public String getSentTo() {
-		return sentTo;
-	}
 
-	public void setSentTo(String sentTo) {
-		this.sentTo = sentTo;
-	}
 
 }

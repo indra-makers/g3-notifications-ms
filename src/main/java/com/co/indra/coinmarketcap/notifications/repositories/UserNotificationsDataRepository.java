@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.apache.catalina.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,10 +16,9 @@ class UserNotificationsDataRowMapper implements RowMapper<UserNotificationsData>
 	@Override
 	public UserNotificationsData mapRow(ResultSet rs, int rowNum) throws SQLException {
 		UserNotificationsData userNotificationsData = new UserNotificationsData();
-		userNotificationsData.setIdUserNotifications(rs.getLong("idUserNotifications"));
+		userNotificationsData.setIdUser(rs.getLong("id_user"));
 		userNotificationsData.setMail(rs.getString("mail"));
-		userNotificationsData.setPhoneNumber(rs.getString("phoneNumber"));
-		userNotificationsData.setIdNotifications(rs.getLong("idNotifications"));
+		userNotificationsData.setPhoneNumber(rs.getString("phone_number"));
 		return userNotificationsData;
 	}
 }
@@ -28,5 +28,18 @@ public class UserNotificationsDataRepository {
 
 	@Autowired
 	private JdbcTemplate template;
+	
+	  public void createNotificationUserData(UserNotificationsData userNotificationsData) {
+	      template.update("INSERT INTO tbl_user_notifications_data(id_user, mail, phone_number) values(?,?,?)",
+	            userNotificationsData.getIdUser(), userNotificationsData.getMail(), userNotificationsData.getPhoneNumber());
+	   }
+
+	   public List<UserNotificationsData> findPhoneByIdUser(Long idUser) {
+	      return template.query(
+	            "SELECT id_user, mail, phone_number FROM tbl_user_notifications_data WHERE id_user=?",
+	            new UserNotificationsDataRowMapper(),
+	            idUser);
+	   }
+	
 
 }

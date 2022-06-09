@@ -12,16 +12,16 @@ import java.util.List;
 
 class NotificationsRowMapper implements RowMapper<Notifications> {
 
-	@Override
-	public Notifications mapRow(ResultSet rs, int rowNum) throws SQLException {
-		Notifications notifications = new Notifications();
-		notifications.setIdNotifications(rs.getLong("idNotifications"));
-		notifications.setType(rs.getString("type"));
-		notifications.setMessage(rs.getString("message"));
-		notifications.setSentAt(rs.getDate("sentAt"));
-		notifications.setIdUser(rs.getLong("idUser"));
-		return notifications;
-	}
+   @Override
+   public Notifications mapRow(ResultSet rs, int rowNum) throws SQLException {
+       Notifications notifications = new Notifications();
+       notifications.setIdNotifications(rs.getLong("idNotifications"));
+       notifications.setType(rs.getString("type"));
+       notifications.setMessage(rs.getString("message"));
+       notifications.setSentAt(rs.getDate("sentAt"));
+       notifications.setIdUser(rs.getLong("idUser"));
+       return notifications;
+   }
 }
 
 @Repository
@@ -29,5 +29,10 @@ public class NotificationsRepository {
 
 	@Autowired
 	private JdbcTemplate template;
+	
+	 public void saveNotificationData(Notifications notifications){
+       template.update("INSERT INTO tbl_notifications(type, message, sent_at, id_user) values(?,?,?,?)",
+               notifications.getType(), notifications.getMessage(), notifications.getSentAt(), notifications.getIdUser());
+   }
 
 }
