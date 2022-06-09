@@ -2,17 +2,14 @@ package com.co.indra.coinmarketcap.notifications.services;
 
 import com.co.indra.coinmarketcap.notifications.config.ErrorCodes;
 import com.co.indra.coinmarketcap.notifications.exceptions.NotFoundException;
-
 import com.co.indra.coinmarketcap.notifications.externalServices.SMSSenderService;
-
 import com.co.indra.coinmarketcap.notifications.externalServices.MailApi;
-
+import com.co.indra.coinmarketcap.notifications.externalServices.Sender;
 import com.co.indra.coinmarketcap.notifications.model.entities.Notifications;
 import com.co.indra.coinmarketcap.notifications.repositories.NotificationsRepository;
 import com.co.indra.coinmarketcap.notifications.repositories.UserNotificationsDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 import java.util.Date;
 
@@ -28,6 +25,9 @@ public class NotificationsService {
     private SMSSenderService SMSSenderService;
 
     private MailApi mailApi;
+
+    private Sender mailApi;
+
 
 
     public void createMailNotification(Notifications notifications) {

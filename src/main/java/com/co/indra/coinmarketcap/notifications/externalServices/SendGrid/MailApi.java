@@ -1,4 +1,4 @@
-package com.co.indra.coinmarketcap.notifications.externalServices;
+package com.co.indra.coinmarketcap.notifications.externalServices.SendGrid;
 
 import com.sendgrid.*;
 import com.sendgrid.helpers.mail.Mail;
@@ -17,9 +17,10 @@ public class MailApi {
 
     @Value("${api.mail.key}")
     private String API_KEY;
-    SendGrid sg = new SendGrid(API_KEY);
-    Request request = new Request();
+
     public void sendMail(String subject, String body, String to) throws IOException {
+        SendGrid sg = new SendGrid(API_KEY);
+        Request request = new Request();
         Email from = new Email(fromMail);
         Email toMail = new Email(to);
         Content content = new Content("text/plain",body);
