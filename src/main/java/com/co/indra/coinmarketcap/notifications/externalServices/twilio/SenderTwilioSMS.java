@@ -1,4 +1,4 @@
-package com.co.indra.coinmarketcap.notifications.externalServices;
+package com.co.indra.coinmarketcap.notifications.externalServices.twilio;
 
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SendSMS {
+public class SenderTwilioSMS {
     @Value("${sms.acc.sid}")
     private String ACCOUNT_SID;
     @Value("${sms.auth.token}")

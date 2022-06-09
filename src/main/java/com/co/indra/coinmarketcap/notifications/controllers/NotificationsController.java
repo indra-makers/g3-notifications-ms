@@ -29,7 +29,7 @@ public class NotificationsController {
 	}
 
 	@PostMapping(Routes.SEND_SMS_PATH)
-	public void CreateSMS(@RequestBody Notifications notifications){
+	public void sendSMS(@RequestBody Notifications notifications){
 		notificationsService.createSMSNotification(notifications);
 	}
 

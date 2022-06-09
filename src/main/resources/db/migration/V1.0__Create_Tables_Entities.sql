@@ -9,6 +9,7 @@ create table public.tbl_notifications (
     "type" varchar(255) NOT NULL,
     "message" varchar(255) NOT NULL,
     "sent_at" timestamp NOT NULL DEFAULT now(),
+    sent_to varchar(255) NOT NULL,
     id_user int NOT NULL,
     CONSTRAINT fk_tbl_notifications FOREIGN KEY (id_user) REFERENCES tbl_user_notifications_data(id_user)
 );
