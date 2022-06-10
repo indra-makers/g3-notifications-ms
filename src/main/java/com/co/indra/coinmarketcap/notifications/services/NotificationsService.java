@@ -2,7 +2,7 @@ package com.co.indra.coinmarketcap.notifications.services;
 
 import com.co.indra.coinmarketcap.notifications.config.ErrorCodes;
 import com.co.indra.coinmarketcap.notifications.exceptions.NotFoundException;
-import com.co.indra.coinmarketcap.notifications.externalServices.EmailSend;
+import com.co.indra.coinmarketcap.notifications.externalServices.SendgridMailSender;
 import com.co.indra.coinmarketcap.notifications.model.entities.Notifications;
 import com.co.indra.coinmarketcap.notifications.repositories.NotificationsRepository;
 import com.co.indra.coinmarketcap.notifications.repositories.UserNotificationsDataRepository;
@@ -21,7 +21,7 @@ public class NotificationsService {
     @Autowired
     private UserNotificationsDataRepository userNotificationsDataRepository;
     @Autowired
-    private EmailSend sendEmails;
+    private SendgridMailSender sendEmails;
 
     public void createEmailNotification(Notifications notifications) {
         if (userNotificationsDataRepository.findEmailByIdUser(notifications.getIdUser()).isEmpty()) {
