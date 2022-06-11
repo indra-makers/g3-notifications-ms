@@ -5,78 +5,78 @@ import java.util.Date;
 
 public class Notifications implements Serializable {
 
-	private Long idNotifications;
+   private Long idNotifications;
 
-	private String type;
+   private String type;
 
-	private String message;
+   private String message;
 
-	private Date sentAt;
+   private Date sentAt;
 
-	private Long idUser;
+   private Long idUser;
 
-	private String sentTo;
+   private String sentTo;
 
-	public Notifications() {
-	}
+   public Notifications() {
+   }
 
-	// Constructor with attributes
+   // Constructor with attributes
 
-	public Notifications(String type, String message, Long idUser, String sentTo) {
-		super();
-		this.type = type;
-		this.message = message;
-		this.idUser = idUser;
-		this.sentTo = sentTo;
-	}
+   public Notifications(String type, String message, Long idUser, String sentTo) {
+      super();
+      this.type = type;
+      this.message = message;
+      this.idUser = idUser;
+      this.sentTo = sentTo;
+   }
 
-	// Getters and Setters
-	public Long getIdNotifications() {
-		return idNotifications;
-	}
+   // Getters and Setters
+   public Long getIdNotifications() {
+      return idNotifications;
+   }
 
-	public void setIdNotifications(Long idNotifications) {
-		this.idNotifications = idNotifications;
-	}
+   public void setIdNotifications(Long idNotifications) {
+      this.idNotifications = idNotifications;
+   }
 
-	public String getType() {
-		return type;
-	}
+   public String getType() {
+      return type;
+   }
 
-	public void setType(String type) {
-		this.type = type;
-	}
+   public void setType(String type) {
+      this.type = type;
+   }
 
-	public String getMessage() {
-		return message;
-	}
+   public String getMessage() {
+      return message;
+   }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+   public void setMessage(String message) {
+      this.message = message;
+   }
 
-	public Date getSentAt() {
-		return sentAt;
-	}
+   public Date getSentAt() {
+      return sentAt;
+   }
 
-	public void setSentAt(Date sentAt) {
-		this.sentAt = sentAt;
-	}
+   public void setSentAt(Date sentAt) {
+      this.sentAt = sentAt;
+   }
 
-	public Long getIdUser() {
-		return idUser;
-	}
+   public Long getIdUser() {
+      return idUser;
+   }
 
-	public void setIdUser(Long idUser) {
-		this.idUser = idUser;
-	}
+   public void setIdUser(Long idUser) {
+      this.idUser = idUser;
+   }
 
-	public String getSentTo() {
-		return sentTo;
-	}
+   public String getSentTo() {
+      return sentTo;
+   }
 
-	public void setSentTo(String sentTo) {
-		this.sentTo = sentTo;
-	}
+   public void setSentTo(String sentTo) {
+      this.sentTo = sentTo;
+   }
 
 }

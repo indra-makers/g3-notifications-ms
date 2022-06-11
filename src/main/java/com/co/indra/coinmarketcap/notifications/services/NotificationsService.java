@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class NotificationsService {
 
-	@Autowired
-	private NotificationsRepository notificationsRepository;
+   @Autowired
+   private NotificationsRepository notificationsRepository;
 
 }

@@ -2,30 +2,37 @@ package com.co.indra.coinmarketcap.notifications.model.requests;
 
 public class NotificationsDataRequest {
 
-	private String mail;
+   private Long idUser;
 
-	private String phoneNumber;
+   private String mail;
 
-	public NotificationsDataRequest() {
-	}
+   private String phoneNumber;
 
-	
-	public String getMail() {
-		return mail;
-	}
+   public NotificationsDataRequest() {
+   }
 
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
+   public Long getIdUser() {
+      return idUser;
+   }
 
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
+   public void setIdUser(Long idUser) {
+      this.idUser = idUser;
+   }
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
+   public String getMail() {
+      return mail;
+   }
 
+   public void setMail(String mail) {
+      this.mail = mail;
+   }
 
+   public String getPhoneNumber() {
+      return phoneNumber;
+   }
+
+   public void setPhoneNumber(String phoneNumber) {
+      this.phoneNumber = phoneNumber;
+   }
 
 }

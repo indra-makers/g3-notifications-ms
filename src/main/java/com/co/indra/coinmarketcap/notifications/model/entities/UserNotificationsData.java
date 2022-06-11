@@ -4,58 +4,45 @@ import java.io.Serializable;
 
 public class UserNotificationsData implements Serializable {
 
-	private Long idUserNotifications;
+   private Long idUser;
 
-	private String mail;
+   private String mail;
 
-	private String phoneNumber;
+   private String phoneNumber;
 
-	private Long idNotifications;
+   // Constructor empty
+   public UserNotificationsData() {
+   }
 
-	// Constructor empty
-	public UserNotificationsData() {
-	}
+   public UserNotificationsData(Long idUser, String mail, String phoneNumber) {
+      super();
+      this.idUser = idUser;
+      this.mail = mail;
+      this.phoneNumber = phoneNumber;
+   }
 
-	// constructor with attributes
+   public Long getIdUser() {
+      return idUser;
+   }
 
-	public UserNotificationsData(String mail, String phoneNumber, Long idNotifications) {
-		super();
-		this.mail = mail;
-		this.phoneNumber = phoneNumber;
-		this.idNotifications = idNotifications;
-	}
+   public void setIdUser(Long idUser) {
+      this.idUser = idUser;
+   }
 
-	// Getters and Setters
-	public Long getIdUserNotifications() {
-		return idUserNotifications;
-	}
+   public String getMail() {
+      return mail;
+   }
 
-	public void setIdUserNotifications(Long idUserNotifications) {
-		this.idUserNotifications = idUserNotifications;
-	}
+   public void setMail(String mail) {
+      this.mail = mail;
+   }
 
-	public String getMail() {
-		return mail;
-	}
+   public String getPhoneNumber() {
+      return phoneNumber;
+   }
 
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-	public Long getIdNotifications() {
-		return idNotifications;
-	}
-
-	public void setIdNotifications(Long idNotifications) {
-		this.idNotifications = idNotifications;
-	}
+   public void setPhoneNumber(String phoneNumber) {
+      this.phoneNumber = phoneNumber;
+   }
 
 }

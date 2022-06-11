@@ -10,7 +10,12 @@ import java.util.List;
 @Service
 public class UserNotificationsDataService {
 
-	@Autowired
-	private UserNotificationsDataRepository userNotificationsDataRepository;
+   @Autowired
+   private UserNotificationsDataRepository userNotificationsDataRepository;
+
+   public void createDataUser(Long idUser, String mail, String phoneNumber) {
+
+      userNotificationsDataRepository.createUserNotificationData(new UserNotificationsData(idUser, mail, phoneNumber));
+   }
 
 }

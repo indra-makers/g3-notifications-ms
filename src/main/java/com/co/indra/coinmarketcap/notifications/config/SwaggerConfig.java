@@ -16,25 +16,18 @@ import java.util.Collections;
 @EnableSwagger2
 public class SwaggerConfig {
 
-    @Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(
-                        RequestHandlerSelectors
-                                .basePackage("com.co.indra.coinmarketcap.notifications"))
-                .paths(PathSelectors.any())
-                .build()
-                .apiInfo(apiInfo());
-    }
+   @Bean
+   public Docket api() {
+      return new Docket(DocumentationType.SWAGGER_2).select()
+            .apis(RequestHandlerSelectors.basePackage("com.co.indra.coinmarketcap.notifications"))
+            .paths(PathSelectors.any()).build().apiInfo(apiInfo());
+   }
 
-    private ApiInfo apiInfo() {
-        return new ApiInfo(
-                "Api Notifications G3",
-                "This api contains the notifications, it is expected to be used in other modules.",
-                "API v1",
-                "Terms of service",
-                new Contact("jaime marin", "https://github.com/titan9804", "jaimeandresmarinalarcon@gmail.com"),
-                "License of API", "API license URL", Collections.emptyList());
-    }
+   private ApiInfo apiInfo() {
+      return new ApiInfo("Api Notifications G3",
+            "This api contains the notifications, it is expected to be used in other modules.", "API v1",
+            "Terms of service",
+            new Contact("jaime marin", "https://github.com/titan9804", "jaimeandresmarinalarcon@gmail.com"),
+            "License of API", "API license URL", Collections.emptyList());
+   }
 }
