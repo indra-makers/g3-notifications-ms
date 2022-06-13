@@ -16,7 +16,7 @@ public class UsersConsumer {
     @Autowired
     private UserNotificationsDataService userNotificationsDataService;
 
-    @RabbitListener(queues = "g3-users-ms")
+    @RabbitListener(queues = "user_notification_data")
     public void getUserQueue(String user){
         try {
             UserNotificationsData userNotificationsData = objectMapper.readValue(user, UserNotificationsData.class);
