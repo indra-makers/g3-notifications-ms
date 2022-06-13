@@ -32,6 +32,11 @@ public class NotificationsController {
 	public void sendSMS(@RequestBody Notifications notifications){
 		notificationsService.createSMSNotification(notifications);
 	}
+	@PostMapping(Routes.SEND_MAIL_PATH)
+	public void CreateMail(@RequestBody Notifications notifications){
+		notificationsService.createMailNotification(notifications);
+
+	}
 
 	// Obtener notificaciones por tipo de notificacion
 	@GetMapping

@@ -21,6 +21,7 @@ class NotificationsRowMapper implements RowMapper<Notifications> {
         notifications.setSentAt(rs.getDate("sent_at"));
         notifications.setIdUser(rs.getLong("idUser"));
         notifications.setSentTo(rs.getString("sent_to"));
+        notifications.setSubject(rs.getString("subject"));
         return notifications;
     }
 }
@@ -32,8 +33,8 @@ public class NotificationsRepository {
     private JdbcTemplate template;
 
     public void saveNotificationData(Notifications notifications){
-        template.update("INSERT INTO tbl_notifications(type, message, sent_at, id_user, sent_to) values(?,?,?,?,?)",
-                notifications.getType(), notifications.getMessage(), notifications.getSentAt(), notifications.getIdUser(), notifications.getSentTo());
+        template.update("INSERT INTO tbl_notifications(type, message, sent_at, id_user, sent_to, subject) values(?,?,?,?,?,?)",
+                notifications.getType(), notifications.getMessage(), notifications.getSentAt(), notifications.getIdUser(), notifications.getSentTo(), notifications.getSubject());
     }
 
 

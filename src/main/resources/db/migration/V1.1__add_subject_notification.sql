@@ -1,0 +1,1 @@
+ALTER TABLE tbl_notifications ADD COLUMN subject varchar(255);

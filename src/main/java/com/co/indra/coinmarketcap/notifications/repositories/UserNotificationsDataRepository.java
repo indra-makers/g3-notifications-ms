@@ -41,4 +41,11 @@ public class UserNotificationsDataRepository {
 				idUser);
 	}
 
+	public List<UserNotificationsData> findMailByIdUser(Long idUser) {
+		return template.query(
+				"SELECT id_user, mail, phone_number FROM tbl_user_notifications_data WHERE id_user=?",
+				new UserNotificationsDataRowMapper(),
+				idUser);
+	}
+
 }
