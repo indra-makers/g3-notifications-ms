@@ -1,13 +1,15 @@
 package com.co.indra.coinmarketcap.notifications.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 
 public class UserNotificationsData implements Serializable {
 
 	private Long idUser;
-
+	@JsonProperty("mail")
 	private String mail;
-
+	@JsonProperty("phone")
 	private String phoneNumber;
 
 	public UserNotificationsData() {
