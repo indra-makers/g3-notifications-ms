@@ -30,8 +30,8 @@ public class UserNotificationsDataRepository {
 	private JdbcTemplate template;
 
 	public void createNotificationUserData(UserNotificationsData userNotificationsData) {
-		template.update("INSERT INTO tbl_user_notifications_data(id_user, mail, phone_number) values(?,?,?)",
-				userNotificationsData.getIdUser(), userNotificationsData.getMail(), userNotificationsData.getPhoneNumber());
+		template.update("INSERT INTO tbl_user_notifications_data(mail, phone_number) values(?,?)",
+				userNotificationsData.getMail(), userNotificationsData.getPhoneNumber());
 	}
 
 	public List<UserNotificationsData> findPhoneByIdUser(Long idUser) {
