@@ -5,6 +5,7 @@ import com.co.indra.coinmarketcap.notifications.exceptions.NotFoundException;
 import com.co.indra.coinmarketcap.notifications.externalServices.SMSSenderService;
 import com.co.indra.coinmarketcap.notifications.externalServices.MailApi;
 import com.co.indra.coinmarketcap.notifications.externalServices.Sender;
+import com.co.indra.coinmarketcap.notifications.externalServices.MailSender;
 import com.co.indra.coinmarketcap.notifications.model.entities.Notifications;
 import com.co.indra.coinmarketcap.notifications.repositories.NotificationsRepository;
 import com.co.indra.coinmarketcap.notifications.repositories.UserNotificationsDataRepository;
@@ -27,6 +28,9 @@ public class NotificationsService {
     private MailApi mailApi;
 
     private Sender mailApi;
+
+    private MailSender mailApi;
+
 
 
 
