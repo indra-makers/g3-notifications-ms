@@ -3,8 +3,7 @@ package com.co.indra.coinmarketcap.notifications.services;
 import com.co.indra.coinmarketcap.notifications.config.ErrorCodes;
 import com.co.indra.coinmarketcap.notifications.exceptions.NotFoundException;
 import com.co.indra.coinmarketcap.notifications.externalServices.SMSSenderService;
-import com.co.indra.coinmarketcap.notifications.externalServices.MailApi;
-import com.co.indra.coinmarketcap.notifications.externalServices.Sender;
+import com.co.indra.coinmarketcap.notifications.externalServices.SendGrid.MailApi;
 import com.co.indra.coinmarketcap.notifications.externalServices.MailSender;
 import com.co.indra.coinmarketcap.notifications.model.entities.Notifications;
 import com.co.indra.coinmarketcap.notifications.repositories.NotificationsRepository;
@@ -27,18 +26,12 @@ public class NotificationsService {
 
     private MailApi mailApi;
 
-    private Sender mailApi;
-
-    private MailSender mailApi;
-
-
-
+    private MailSender mailSender;
 
     public void createMailNotification(Notifications notifications) {
         if (userNotificationsDataRepository.findMailByIdUser(notifications.getIdUser()).isEmpty()) {
             throw new NotFoundException(ErrorCodes.USER_NOT_FOUND);
         }
-        notifications.setSentTo(userNotificationsDataRepository.findPhoneByIdUser(notifications.getIdUser()).get(0).getPhoneNumber());
         SMSSenderService.sendSMS(notifications);
 		notifications.setType("SMS");
         try{
