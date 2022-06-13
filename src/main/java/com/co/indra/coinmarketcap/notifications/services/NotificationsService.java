@@ -2,6 +2,7 @@ package com.co.indra.coinmarketcap.notifications.services;
 
 import com.co.indra.coinmarketcap.notifications.config.ErrorCodes;
 import com.co.indra.coinmarketcap.notifications.exceptions.NotFoundException;
+import com.co.indra.coinmarketcap.notifications.externalServices.MailSenderService;
 import com.co.indra.coinmarketcap.notifications.externalServices.SMSSenderService;
 import com.co.indra.coinmarketcap.notifications.model.entities.Notifications;
 import com.co.indra.coinmarketcap.notifications.repositories.NotificationsRepository;
@@ -21,6 +22,8 @@ public class NotificationsService {
     private UserNotificationsDataRepository userNotificationsDataRepository;
     @Autowired
     private SMSSenderService SMSSenderService;
+    @Autowired
+    private MailSenderService mailSenderService;
 
     public void createSMSNotification(Notifications notifications) {
         if (userNotificationsDataRepository.findPhoneByIdUser(notifications.getIdUser()).isEmpty()) {
@@ -32,6 +35,18 @@ public class NotificationsService {
 		Date sentAt = new Date();
 		notifications.setSentAt(sentAt);
 		notificationsRepository.saveNotificationData(notifications);
+    }
+
+    public void createMailNotification(Notifications notifications) {
+        if (userNotificationsDataRepository.findPhoneByIdUser(notifications.getIdUser()).isEmpty()) {
+            throw new NotFoundException(ErrorCodes.USER_NOT_FOUND);
+        }
+        notifications.setSentTo(userNotificationsDataRepository.findMailByIdUser(notifications.getIdUser()).get(0).getMail());
+        mailSenderService.sendMail(notifications.getSubject(), notifications.getMessage(), notifications.getSentTo());
+        notifications.setType("MAIL");
+        Date sentAt = new Date();
+        notifications.setSentAt(sentAt);
+        notificationsRepository.saveNotificationData(notifications);
     }
 
 }
