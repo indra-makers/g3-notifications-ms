@@ -29,4 +29,18 @@ public class UserNotificationsDataRepository {
 	@Autowired
 	private JdbcTemplate template;
 
+
+	public void createNotificationUserData(UserNotificationsData userNotificationsData) {
+		template.update("INSERT INTO tbl_user_notifications_data(mail, phone_number) values(?,?)",
+				userNotificationsData.getMail(), userNotificationsData.getPhoneNumber());
+	}
+
+	public List<UserNotificationsData> findMailByIdUser(Long idUser) {
+		return template.query(
+				"SELECT id_user, mail, phone_number FROM tbl_user_notifications_data WHERE id_user=?",
+				new UserNotificationsDataRowMapper(),
+				idUser);
+	}
+
+
 }
