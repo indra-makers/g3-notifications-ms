@@ -13,21 +13,24 @@ public class Notifications implements Serializable {
 
 	private Date sentAt;
 
+	private String sentTo;
+
 	private Long idUser;
 
-	private String sentTo;
 
 	public Notifications() {
 	}
 
 	// Constructor with attributes
 
-	public Notifications(String type, String message, Long idUser, String sentTo) {
-		super();
+
+	public Notifications(Long idNotifications, String type, String message, Date sentAt, String sendTo, Long idUser) {
+		this.idNotifications = idNotifications;
 		this.type = type;
 		this.message = message;
+		this.sentAt = sentAt;
+		this.sentTo = sendTo;
 		this.idUser = idUser;
-		this.sentTo = sentTo;
 	}
 
 	// Getters and Setters
@@ -78,5 +81,4 @@ public class Notifications implements Serializable {
 	public void setSentTo(String sentTo) {
 		this.sentTo = sentTo;
 	}
-
 }
