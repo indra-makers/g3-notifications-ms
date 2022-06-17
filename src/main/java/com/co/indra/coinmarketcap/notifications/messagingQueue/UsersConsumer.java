@@ -24,6 +24,5 @@ public class UsersConsumer {
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

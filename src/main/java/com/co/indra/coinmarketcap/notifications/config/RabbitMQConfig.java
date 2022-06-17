@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
     @Bean
     public Queue testQueue() {
-        return new Queue("user_notification_data");
+        return new Queue("g3-rabbit-cache");
     }
 }
